@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller</title>
+    <style>
+        body {
+            background-color: rgb(164, 104, 154);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .img-dice {
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        .roll {
+            height: 40px;
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid black;
+            cursor: pointer;
+            background-color: white;
+            font-size: 16px;
+           
+        }
+
+        .roll:hover {
+            background-color: rgb(240, 164, 211);
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="dice.png" class="img-dice" id="img-dice"/>
+        <br>
+        <button class="roll" onclick="roll()">Roll</button>
+    </div>
+    <script>
+        function roll() {
+            const randomNumber = Math.floor(Math.random() * 6) + 1;
+            const imgElement = document.getElementById("img-dice");
+
+            imgElement.src = `dice (${randomNumber}).png`;
+        }
+    </script>
+</body>
+</html>
